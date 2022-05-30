@@ -1,17 +1,14 @@
+import { AverageResult } from '../models'
 
 export interface AverageCalculation {
-  execute: (params: AverageCalculation.Params) => Promise<AverageCalculation.Result>
+  execute: (params: AverageCalculation.Params) => AverageCalculation.Result
 }
 
 export namespace AverageCalculation {
   export type Params = {
-    numberOne: number
-    numberTwo: number
+    firstNote: number
+    secondNote: number
   }
 
-  export type Result = {
-    numberOne: number
-    numberTwo: number
-    average: number
-  }
+  export type Result = AverageResult
 }
