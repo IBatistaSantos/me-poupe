@@ -24,6 +24,10 @@ describe('AverageCalculationService', () => {
       secondNote: 9
     })
 
-    expect(result.average).toBe(9.00)
+    expect(result).toEqual({
+      firstNote: 8,
+      secondNote: 9,
+      average: 9.00
+    })
   })
 })

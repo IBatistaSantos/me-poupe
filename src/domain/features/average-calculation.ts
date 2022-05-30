@@ -10,5 +10,5 @@ export namespace AverageCalculation {
     secondNote: number
   }
 
-  export type Result = AverageResult
+  export type Result = AverageResult | Error
 }
