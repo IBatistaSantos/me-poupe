@@ -70,7 +70,7 @@ jobs:
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
-        id: task-def
+        id: backend-poupe
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
             task-definition: task-definition.json
@@ -80,7 +80,7 @@ jobs:
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-            task-definition: ${{ steps.task-def.outputs.task-definition }}
+            task-definition: ${{ steps.backend-poupe.outputs.task-definition }}
             service: me-poupe
             cluster: me-poupe
             wait-for-service-stability: true
