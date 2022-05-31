@@ -36,7 +36,7 @@ export class Addresses {
     this.ibge = params.ibge
     this.gia = params.gia
     this.siafi = params.siafi
-    this.message = ((params?.bairro) != null)
+    this.message = ((params?.bairro) !== '')
       ? []
       : [{ field: 'bairro', message: `CEP ${this.cep} não possui bairro` }]
   }

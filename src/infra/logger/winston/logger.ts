@@ -21,7 +21,8 @@ export class WinstonLogger implements Logger {
         format.colorize(),
         format.timestamp(),
         format.printf(({ timestamp, metadata, level, message }) => {
-          return `[${timestamp}] ${level}: ${message} : ${metadata}`
+          return `[${timestamp}] ${level}: ${message} : ${metadata})
+        } `
         })
       )
     })

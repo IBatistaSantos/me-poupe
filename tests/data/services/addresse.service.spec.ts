@@ -75,13 +75,14 @@ describe('AddresseService', () => {
     })
   })
 
-  it('should return message when CEPS does not have bairro', async () => {
+  it('should return message when CEPS does not have neighborhood', async () => {
     viaCepApi.loadAdresses.mockResolvedValueOnce({
       cep: '01001-000',
       logradouro: 'Praça da Sé',
       complemento: 'lado ímpar',
       localidade: 'São Paulo',
       uf: 'SP',
+      bairro: '',
       ibge: '3550308',
       gia: '1004',
       ddd: '11',
@@ -93,7 +94,7 @@ describe('AddresseService', () => {
       cep: '01001-000',
       logradouro: 'Praça da Sé',
       complemento: 'lado ímpar',
-      bairro: null,
+      bairro: '',
       localidade: 'São Paulo',
       uf: 'SP',
       ibge: '3550308',

@@ -11,6 +11,7 @@ export class AddresseService implements Addresse {
 
   async execute (params: Addresse.Params): Promise<Addresse.Result> {
     const { cep } = params
+
     this.logger.info({
       message: `[ ${AddresseService.name}] - Request`,
       timestamp: new Date(),
@@ -18,12 +19,18 @@ export class AddresseService implements Addresse {
     })
 
     if (!this.validateCep(params.cep)) {
+      this.logger.error({
+        message: `[ ${AddresseService.name}] - Invalid CEP`,
+        timestamp: new Date(),
+        metadata: JSON.stringify(params)
+      })
       return new ValidationCepError(cep)
     }
 
     this.logger.info({
       message: `Call ViaCep API - ${cep}`,
-      timestamp: new Date()
+      timestamp: new Date(),
+      metadata: JSON.stringify(params)
     })
 
     const infoCep = await this.loadAdressesViaCepApi.loadAdresses({ cep })
@@ -35,6 +42,11 @@ export class AddresseService implements Addresse {
     })
 
     if (infoCep === undefined) {
+      this.logger.error({
+        message: `[ ${AddresseService.name}] - Error call Via CEP API`,
+        timestamp: new Date(),
+        metadata: JSON.stringify(params)
+      })
       return new LoadAdressesError(cep)
     }
 

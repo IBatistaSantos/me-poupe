@@ -14,7 +14,7 @@ describe('ViaCepAPI', () => {
 
   beforeEach(() => {
     httpClient.get
-      .mockResolvedValueOnce({
+      .mockResolvedValue({
         cep: '01001-000',
         logradouro: 'Praça da Sé',
         complemento: 'lado ímpar',
@@ -53,6 +53,14 @@ describe('ViaCepAPI', () => {
       ddd: '11',
       siafi: '7107'
     })
+  })
+
+  it('should return undefined if HttGetClient return error', async () => {
+    httpClient.get.mockResolvedValueOnce({ erro: 'true' })
+
+    const addresse = await sut.loadAdresses({ cep })
+
+    expect(addresse).toBeUndefined()
   })
 
   it('should return undefined if HttpGetClient throws', async () => {

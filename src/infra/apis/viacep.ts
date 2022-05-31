@@ -12,6 +12,10 @@ export class ViaCepApi implements LoadAddresseViaCepApi {
       const { cep } = params
       const url = `${this.baseUrl}/${cep}/json`
       const result = await this.httpClient.get({ url })
+
+      if (result.erro === 'true') {
+        return undefined
+      }
       return result
     } catch (error) {
       return undefined

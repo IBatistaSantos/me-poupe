@@ -15,10 +15,7 @@ export abstract class Controller {
       return badRequest(error)
     }
     try {
-      return await this.perform({
-        firstNote: httpRequest.firstNote,
-        secondNote: httpRequest.secondNote
-      })
+      return await this.perform(httpRequest)
     } catch (error) {
       return serverError(error as Error)
     }
