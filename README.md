@@ -6,6 +6,7 @@
 
 
 [![codecov](https://codecov.io/gh/IBatistaSantos/me-poupe/branch/main/graph/badge.svg?token=NK9YUVJ2CW)](https://codecov.io/gh/IBatistaSantos/me-poupe)
+![Datadog](https://img.shields.io/badge/datadog-%23632CA6.svg?style=for-the-badge&logo=datadog&logoColor=white)
 
 ## Objetivo
 
