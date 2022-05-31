@@ -1,10 +1,14 @@
 import { AverageCalculationService } from '@/data/services'
+import { Logger } from '@/domain/models'
+import { mock, MockProxy } from 'jest-mock-extended'
 
 describe('AverageCalculationService', () => {
   let sut: AverageCalculationService
+  let logger: MockProxy<Logger>
 
   beforeEach(() => {
-    sut = new AverageCalculationService()
+    logger = mock()
+    sut = new AverageCalculationService(logger)
   })
 
   it('should call AverageCalculationService with the correct parameters', async () => {
@@ -27,7 +31,7 @@ describe('AverageCalculationService', () => {
     expect(result).toEqual({
       firstNote: 8,
       secondNote: 9,
-      average: 9.00
+      average: '9.00'
     })
   })
 })

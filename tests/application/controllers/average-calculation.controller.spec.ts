@@ -17,7 +17,7 @@ describe('AverageCalculationController', () => {
     averageCalculationService.execute.mockReturnValue({
       firstNote,
       secondNote,
-      average: 9.00
+      average: '9.00'
     })
   })
 
@@ -56,7 +56,7 @@ describe('AverageCalculationController', () => {
       data: {
         firstNote,
         secondNote,
-        average: 9.00
+        average: '9.00'
       }
     })
   })
