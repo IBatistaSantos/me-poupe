@@ -1,7 +1,7 @@
 export const averagePath = {
   post: {
     tags: ['Cálculo de Média'],
-    summary: 'Rota cálculo de média utilizando a estratégia de arredondamento Half Round Up',
+    summary: 'Rota para cálculo de média utilizando a estratégia de arredondamento Half Round Up',
     requestBody: {
       content: {
         'application/json': {
