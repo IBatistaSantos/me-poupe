@@ -34,9 +34,10 @@ Existem dois scripts para rodar o teste, sendo o primeiro para executar os teste
 ## Tecnologias
 
 - Nodejs
-- Datadog(armazenamento dos logs para ambiente de produção)
+- Datadog
 - Clean Architecture
 - TDD - Test Driver Development
+- Typescript
 
 ## Documentação
 
