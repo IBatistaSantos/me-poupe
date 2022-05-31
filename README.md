@@ -5,6 +5,8 @@
 ![](https://mepoupe.com/images/logo.jpg)
 
 
+[![codecov](https://codecov.io/gh/IBatistaSantos/me-poupe/branch/main/graph/badge.svg?token=NK9YUVJ2CW)](https://codecov.io/gh/IBatistaSantos/me-poupe)
+
 ## Objetivo
 
 Criação de uma API que calcule a média de dois números utilizando a estratégia de arredondamento Half Round Up e consulta de CEP utilizando o webservice viaCep
