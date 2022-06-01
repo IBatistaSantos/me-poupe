@@ -41,6 +41,7 @@ Existem dois scripts para rodar o teste, sendo o primeiro para executar os teste
 - Clean Architecture
 - TDD - Test Driver Development
 - Typescript
+- CI/CD (Para evitar maiores custos a parte do deploy na EC2 foi comentada)
 
 ## Documentação
 
