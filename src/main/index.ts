@@ -1,4 +1,6 @@
 import './config/module-alias'
+import './config/trace'
+
 import { app } from './config/app'
 import { env } from './config/env'
 
